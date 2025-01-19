@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Block Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .block {
+            border: 2px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            transition: transform 0.3s;
+        }
+        .block:hover {
+            transform: scale(1.05);
+            border-color: #4CAF50;
+        }
+        .block h3 {
+            margin: 10px 0;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ad Block Marketplace</h1>
+        <p>Select and purchase ad blocks to promote your business.</p>
+    </header>
+    <div class="container">
+        <div class="grid">
+            <!-- Ad Block 1 -->
+            <div class="block">
+                <h3>Block 1</h3>
+                <p>Size: 300x250</p>
+                <p>Price: $50/month</p>
+                <button class="btn" onclick="purchaseBlock('Block 1', 50)">Buy Now</button>
+            </div>
+            <!-- Ad Block 2 -->
+            <div class="block">
+                <h3>Block 2</h3>
+                <p>Size: 728x90</p>
+                <p>Price: $100/month</p>
+                <button class="btn" onclick="purchaseBlock('Block 2', 100)">Buy Now</button>
+            </div>
+            <!-- Ad Block 3 -->
+            <div class="block">
+                <h3>Block 3</h3>
+                <p>Size: 160x600</p>
+                <p>Price: $75/month</p>
+                <button class="btn" onclick="purchaseBlock('Block 3', 75)">Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function purchaseBlock(blockName, price) {
+            const confirmPurchase = confirm(`Are you sure you want to buy ${blockName} for $${price}?`);
+            if (confirmPurchase) {
+                alert(`Thank you for purchasing ${blockName}!`);
+                // Integrate payment gateway API (like Stripe or PayPal) here
+            }
+        }
+    </script>
+</body>
+</html>
